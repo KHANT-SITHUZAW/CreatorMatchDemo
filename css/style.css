@@ -319,28 +319,31 @@ a {
   z-index: 1;
   width: 200px;
   height: 200px;
-  -webkit-transform-origin: top right;
-  transform-origin: top right;
   fill: #6aa63c;
-  mix-blend-mode: color-dodge;
+  mix-blend-mode: luminosity;
+  transition:all .6s linear;
 }
-.shape-bg .shape-circle-purple svg { 
+.shape-bg .shape-circle-purple svg {
   position: relative;
-  transition:all .8s linear;
+
 }
-.shape-bg .shape-circle-purple.loading svg { 
+.shape-bg .shape-circle-purple.loading {
+  animation: loadcirclepurple 1s ease-in-out;
+  -webkit-animation-timing-function:ease-in-out;
+}
+/*.shape-bg .shape-circle-purple.loading svg { 
   animation: loadcirclepurple 1s linear;
   animation-timing-function:linear;
   -webkit-animation-timing-function:linear;
-}
+}*/
 @keyframes loadcirclepurple {
   from{
-    top: -100px;
-    left: -100px;
+    top: -200px;
+    left: -110px;
   }
   to{
-    top: 0px;
-    left: 0px;
+    top: -100px;
+    left: 267px;
   }
 
 }
@@ -374,8 +377,9 @@ a {
   width: 600px;
   height: 600px;
   transition: all 1s linear;
-  border-radius: 50%;
-  animation: shapegrouptopleft 3s;
+  background-color: #fbb5b5;
+  border-radius: 22%;
+  animation: shapegrouptopleft 1s;
   animation-timing-function: ease-in-out;
   -webkit-animation-timing-function: ease-in-out;
 }
@@ -397,10 +401,10 @@ to{
 }
 }
 .shape-bg .shape-group-top-left .shape-circle-red {
-  bottom: -311px;
-  left: 150px;
-  width: 410px;
-  height: 410px;
+  bottom: -100px;
+  left: 180px;
+  width: 320px;
+  height: 350px;
   fill: #e9535e;
 }
 
@@ -446,11 +450,15 @@ to{
   -webkit-animation-timing-function: ease-in-out;
 }
 @keyframes loadringblue {
- from{
+ 0%{
+  top: 200px;
+  right: 200px;
+ }
+ 50%{
   top: 100px;
   right: 100px;
  }
- to{
+ 100%{
   top: 0px;
   right: 0px;
  }
@@ -480,30 +488,28 @@ to{
 }
 
 .shape-bg .shape-group-bottom-right {
-  right: -700px;
+  right: 0;
   bottom: 0;
-  width: 1852px;
+  width: 100%;
   height: 120px;
   overflow: visible;
   transition: all 1s linear;
-  animation: shapegroupbottomright 1s;
+  animation: shapegroupbottomright 2s;
   animation-timing-function: ease-in-out;
   -webkit-animation-timing-function: ease-in-out;
 }
 @keyframes shapegroupbottomright {
 from{
-  right: -1000px;
-  bottom: -100px;
+  bottom: -400px;
 }
 to{
-  right: -700px;
   bottom: 0;
 }
 }
 .shape-bg .shape-group-bottom-right .shape-semicircle-blue {
-  top: 0;
+  bottom: -38px;
   left: 0;
-  width: 1852px;
+  width: 1400px;
   height: 388px;
   fill: #338acb;
 }
@@ -543,10 +549,10 @@ to{
 }
 
 .shape-bg .shape-square-ring-green {
-  top: 355px;
-  right: -359px;
-  width: 976px;
-  height: 880px;
+  top: 300px;
+  right: 0;
+  width: 500px;
+  height: 600px;
   transition: all 1s linear;
   fill: #fd4df1;
   mix-blend-mode: multiply;
@@ -560,8 +566,8 @@ to{
   right: -859px;
  }
  to{
-  top: 355px;
-  right: -359px;
+  top: 300px;
+  right: 0px;
  }
 }
 .shape-bg .shape-square-ring-green svg {
@@ -593,14 +599,13 @@ to{
 }
 
 .shape-bg .shape-group-top-right {
-  top: -352px;
-  right: -310px;
-  width: 820px;
-  height: 820px;
+  top: 0px;
+  right: -220px;
+  width: 700px;
+  height: 500px;
   -webkit-transform-origin: bottom left;
   transform-origin: bottom left;
   transition: all 1s linear;
-  border-radius: 50%;
   animation: shapegrouptopright 1s ;
   animation-timing-function: ease-in-out;
   -webkit-animation-timing-function: ease-in-out;
@@ -611,16 +616,16 @@ from{
   right: -650px;
 }
 to{
-  top: -352px;
-  right: -310px;
+  top: 0px;
+  right: -220px;
 }
 }
 
 .shape-bg .shape-group-top-right .shape-circle-ring-yellow {
-  top: 0;
+  top: -110px;
   left: 0;
-  width: 820px;
-  height: 820px;
+  width: 500px;
+  height: 500px;
   fill: #eaa250;
 }
 
@@ -633,27 +638,26 @@ to{
 
 @keyframes ring-yellow {
   0% {
-    top: 0px;
     right: 0px;
+    transform: rotate(0deg);
   }
-
   50% {
-    top: 20px;
-    right: -80px;
+    right: -100px;
+    transform: rotate(90deg);
   }
-
   100% {
-    top: 0px;
+   
     right: 0px;
+    transform: rotate(0deg);
   }
 }
 
 .shape-bg .shape-group-top-right .shape-square-ring-gray {
-  top: 707px;
-  left: -108px;
-  width: 976px;
-  height: 880px;
-  fill: #f1f1f1;
+  top: 85px;
+  left: 130px;
+  width: 200px;
+  height: 200px;
+  fill: #566D7E;
 }
 
 .shape-bg .shape-group-top-right .shape-square-ring-gray svg {
