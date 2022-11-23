@@ -116,11 +116,11 @@ $(window).scroll(function () {
   var project = parseInt($('.section-project .decoration-text').css('left'))
   var jointeam = parseInt($('.section-careers .text-en').css('left'))
   console.log('window scroll=' + newscroll)
-  if (oldscroll < newscroll && newscroll >= 20) {
+  if (oldscroll < newscroll && newscroll >= 250 && newscroll <=300)  {
     decotxt0 = -20
     $('.section-hero .link-block-sns').fadeOut()
   }
-  if (oldscroll > newscroll && newscroll < 20) {
+  if (oldscroll > newscroll && newscroll < 230) {
     decotxt0 = 0
     $('.section-hero .link-block-sns').fadeIn()
   }
