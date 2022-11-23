@@ -31,18 +31,18 @@ $(document).ready(function () {
       : 4
     var slidesTablet = $this.data('slides-tablet')
       ? $this.data('slides-tablet')
-      : 3
+      : 2.5
     var slidesMobile = $this.data('slides-mobile')
       ? $this.data('slides-mobile')
-      : 2.5
+      : 2
     var spaceBetween = $this.data('space-between')
       ? $this.data('space-between')
       : 0
 
     var swiper1 = new Swiper('.swiper1-slider-' + index, {
-      direction: 'horizontal',
-      loop: loop,
-      freeMode: freeMode,
+      slidesPerView: 'auto',
+      spaceBetween: 50,
+      freeMode: true,
       spaceBetween: spaceBetween,
       breakpoints: {
         1920: {
@@ -124,10 +124,10 @@ $(window).scroll(function () {
     decotxt0 = 0
     $('.section-hero .link-block-sns').fadeIn()
   }
-  if (oldscroll < newscroll && newscroll >= 440 && newscroll <= 1300) {
+  if (oldscroll < newscroll && newscroll >= 440 && newscroll <= 1500) {
     decotxt1 += 10
   }
-  if (oldscroll > newscroll && newscroll >= 440 && newscroll <= 1300) {
+  if (oldscroll > newscroll && newscroll >= 440 && newscroll <= 1500) {
     decotxt1 -= 10
   }
   if (oldscroll < newscroll && newscroll >= 840 && newscroll <= 1670) {
@@ -156,10 +156,10 @@ $(window).scroll(function () {
     $('.section-service,.section-project,.header-inner').removeClass('isblack')
     if (newscroll < oldscroll) project -= 10
   }
-  if (oldscroll < newscroll && newscroll >= 6625 && newscroll <= 7535) {
+  if (oldscroll < newscroll && newscroll >= 6625 && newscroll <= 7735) {
     jointeam += 15
   }
-  if (oldscroll > newscroll && newscroll >= 6625 && newscroll <= 7535) {
+if (oldscroll > newscroll && newscroll >= 6625 && newscroll <= 7735) {
     jointeam -= 15
   }
   $('.section-hero .copyright span').css('top', decotxt0 + 'px')
