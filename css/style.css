@@ -549,7 +549,7 @@ to{
   height: 880px;
   transition: all 1s linear;
   fill: #fd4df1;
-  mix-blend-mode: multiply;
+  mix-blend-mode: color-burn;
   animation: shapesquareringgreen 1s;
   animation-timing-function: ease-in-out;
   -webkit-animation-timing-function: ease-in-out;
@@ -601,6 +601,7 @@ to{
   transform-origin: bottom left;
   transition: all 1s linear;
   border-radius: 50%;
+  mix-blend-mode: color-dodge;
   animation: shapegrouptopright 1s ;
   animation-timing-function: ease-in-out;
   -webkit-animation-timing-function: ease-in-out;
@@ -618,7 +619,7 @@ to{
 
 .shape-bg .shape-group-top-right .shape-circle-ring-yellow {
   top: 0;
-  left: 0;
+  left: -18px;
   width: 820px;
   height: 820px;
   fill: #eaa250;
@@ -654,10 +655,6 @@ to{
   width: 976px;
   height: 880px;
   fill: #f1f1f1;
-}
-
-.shape-bg .shape-group-top-right .shape-square-ring-gray svg {
-  position: relative;
   animation: ring-gray 7s infinite;
   animation-timing-function: ease-in-out;
   -webkit-animation-timing-function: ease-in-out;
@@ -668,21 +665,39 @@ to{
     top: 0px;
     right: 0px;
     transform: rotate(0deg);
+
   }
 
   50% {
     top: 10px;
     right: -97px;
     transform: rotate(30deg);
+
   }
 
   100% {
     top: 0px;
     right: 0px;
     transform: rotate(0deg);
+ 
   }
 }
 
+.shape-bg .shape-group-top-right .shape-square-ring-gray svg {
+  position: relative;
+  opacity: 0;
+  animation: ring-gray-svg 7s ;
+ animation-timing-function: ease-in-out;
+ -webkit-animation-timing-function: ease-in-out;
+}
+@keyframes ring-gray {
+  to{
+    opacity: 0;
+  }
+  from{
+    opacity: 1;
+  }
+}
 .main {
   position: relative;
   z-index: 1;
