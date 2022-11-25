@@ -34,7 +34,7 @@ $(document).ready(function () {
       : 2.5
     var slidesMobile = $this.data('slides-mobile')
       ? $this.data('slides-mobile')
-      : 2
+      : 1.5
     var spaceBetween = $this.data('space-between')
       ? $this.data('space-between')
       : 0
@@ -115,8 +115,9 @@ $(window).scroll(function () {
   var info = parseInt($('.section-information .decoration-text').css('right'))
   var project = parseInt($('.section-project .decoration-text').css('left'))
   var jointeam = parseInt($('.section-careers .text-en').css('left'))
+  //var contact=parseInt($('.footer-contact .decoration-text').css('left')) 
   console.log('window scroll=' + newscroll)
-  if (oldscroll < newscroll && newscroll >= 250 && newscroll <=300)  {
+  if (oldscroll < newscroll && newscroll >= 250 && newscroll <=350)  {
     decotxt0 = -20
     $('.section-hero .link-block-sns').fadeOut()
   }
@@ -124,44 +125,37 @@ $(window).scroll(function () {
     decotxt0 = 0
     $('.section-hero .link-block-sns').fadeIn()
   }
-  if (oldscroll < newscroll && newscroll >= 440 && newscroll <= 1500) {
+  if (oldscroll < newscroll && newscroll >= 440 && newscroll <= 1700) {
     decotxt1 += 10
   }
-  if (oldscroll > newscroll && newscroll >= 440 && newscroll <= 1500) {
+  if (oldscroll > newscroll && newscroll >= 440 && newscroll <= 1700) {
     decotxt1 -= 10
   }
-  if (oldscroll < newscroll && newscroll >= 840 && newscroll <= 1670) {
-    decotxt2 += 10
-  }
-  if (oldscroll > newscroll && newscroll >= 1100 && newscroll <= 1670) {
-    decotxt2 -= 10
-  }
-  if (oldscroll < newscroll && newscroll >= 1111 && newscroll <= 2970) {
+  if (oldscroll < newscroll) {
     movedimg += 15
+    decotxt2 += 10
+    info += 10
+    jointeam += 5
+    project += 10
+    //contact += 10;
   }
-  if (oldscroll > newscroll && newscroll >= 1111 && newscroll <= 2970) {
+  if (oldscroll > newscroll) {
     movedimg -= 15
+    decotxt2 -= 10
+    info -= 10
+    jointeam -= 5
+    project -= 10
+    //contact -= 10;
   }
 
-  if (oldscroll < newscroll && newscroll >= 5140 && newscroll <= 5990) {
-    info += 10
-  }
-  if (oldscroll > newscroll && newscroll >= 5140 && newscroll <= 5990) {
-    info -= 10
-  }
-  if (newscroll >= 4300 && newscroll < 5340) {
+  if (newscroll >= 4200 && newscroll < 5440) {
     $('.section-service,.section-project,.header-inner').addClass('isblack')
-    if (newscroll > oldscroll) project += 10
-  } else if (newscroll <= 4250 || newscroll >= 5340) {
+   
+  } else if (newscroll < 4200 || newscroll >= 5440) {
     $('.section-service,.section-project,.header-inner').removeClass('isblack')
-    if (newscroll < oldscroll) project -= 10
+   
   }
-  if (oldscroll < newscroll && newscroll >= 6625 && newscroll <= 7735) {
-    jointeam += 15
-  }
-if (oldscroll > newscroll && newscroll >= 6625 && newscroll <= 7735) {
-    jointeam -= 15
-  }
+
   $('.section-hero .copyright span').css('top', decotxt0 + 'px')
 
   $('.section-mission .decoration-text').css('left', decotxt1 + 'px')
@@ -173,6 +167,6 @@ if (oldscroll > newscroll && newscroll >= 6625 && newscroll <= 7735) {
   $('.section-information .decoration-text').css('right', info + 'px')
   $('.section-project .decoration-text').css('left', project + 'px')
   $('.section-careers .text-en').css('left', jointeam + 'px')
-
+  //$('.footer-contact .decoration-text').css('left', contact + 'px')
   oldscroll = newscroll
 })
