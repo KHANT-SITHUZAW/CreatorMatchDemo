@@ -58,7 +58,8 @@ $(document).ready(function () {
       scrollbar: {
         el: '.swiper-scrollbar',
         draggable: true,
-        dragSize: dragSize
+        //dragSize: dragSize
+        dragSize:'auto'
       }
     })
   })
@@ -90,10 +91,12 @@ $(document).ready(function () {
       scrollbar: {
         el: '.swiper-scrollbar',
         draggable: true,
-        dragSize: dragSize
+        dragSize:'auto'
       }
     })
   })
+  //swiperSelector1.slideNext();
+  //swiperSelector2.slideNext();
   $('.shape-bg .shape-circle-purple').addClass('loading')
   $('.shape-bg .shape-circle-ring-blue').addClass('loading')
   setTimeout(function () {

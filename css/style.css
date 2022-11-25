@@ -1495,11 +1495,11 @@ a {
 }
 
 .section-project .section-heading .btn-arrow-right .icon-arrow-right {
-  padding: 13px 25px;
+  padding: 25px 25px;
 }
 
 .section-project .section-heading .btn-arrow-right a:hover .icon-arrow-right {
-  padding: 8px 16px 8px 23px;
+  padding: 20px 16px 20px 23px;
 }
 
 .section-project.isblack .section-heading .btn-arrow-right .btn-text {
@@ -2336,9 +2336,11 @@ a {
     bottom: 4px;
     left: 4px;
   }
+
 }
 
 @media only screen and (max-width: 767.9px) {
+ 
   @keyframes loadcirclepurple {
     from {
       top: -200px;
