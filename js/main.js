@@ -6,7 +6,15 @@ $(document).ready(function () {
   $('.section-hero .section-inner .main-text').fadeIn(2500)
   $('.header-inner .btn-menu').click(function () {
     $('.header-inner .btn-menu').toggleClass('click')
-    $('.menu').fadeToggle()
+    $('.menu').fadeToggle(300)
+    var menutext=parseInt($('.menu-contents .link-block-nav .list-level-2 li p span').css('bottom'))
+    if(menutext < 0) {
+      $(".menu-contents .link-block-nav .list-level-2 li p span,.menu-contents .link-block-nav .list-level-3 a,.menu-contents .link-block-nav .list-level-2 a,.menu-contents .link-block-nav .list-level-1 a")
+        .css('bottom', 0)
+    }
+    else {
+      $(".menu-contents .link-block-nav .list-level-2 li p span,.menu-contents .link-block-nav .list-level-3 a,.menu-contents .link-block-nav .list-level-2 a,.menu-contents .link-block-nav .list-level-1 a").css('bottom', '-50px');
+    }
   })
   var interval = setInterval(function () {
     $('.main .copy-main .copy-main-inner .letter' + count++).addClass(
@@ -388,7 +396,7 @@ $(window).scroll(function () {
         $(
           '.section-service .bottom-decoration-text-container .decoration-text-1'
         ).height() *
-          3
+          2.8
   ) {
     $('.section-service,.section-project,.header-inner').removeClass('isblack')
   }

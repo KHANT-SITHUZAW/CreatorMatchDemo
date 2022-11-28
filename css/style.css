@@ -183,6 +183,7 @@ a {
   overflow: auto;
   pointer-events: auto;
   -webkit-overflow-scrolling: touch;
+
 }
 
 .menu .menu-overlay {
@@ -240,6 +241,8 @@ left: 80px;
   height: 29px;
   transition: fill 0.5s;
   fill: #fff;
+  position: relative;
+  bottom: -50px;
 }
 
 .menu-contents .link-block-nav {
@@ -258,12 +261,15 @@ left: 80px;
 .menu-contents .link-block-nav li {
   line-height: 1;
   font-size: 28px;
+  overflow: hidden;
 }
 
 .menu-contents .link-block-nav .list-level-1>li {
   margin-bottom: 52px;
 }
-
+.menu-contents .link-block-nav .list-level-1 li .listlevel1-block {
+  overflow: hidden;
+}
 .menu-contents .link-block-nav li a,
 .menu-contents .link-block-nav li p {
   display: inline-block;
@@ -274,7 +280,10 @@ left: 80px;
 .menu-contents .link-block-nav .list-level-1 a,
 .menu-contents .link-block-nav .list-level-2 a,
 .menu-contents .link-block-nav .list-level-3 a {
-  transition: color 0.5s;
+  transition: all 0.5s linear;
+  position: relative;
+  bottom: -50px;
+  transition-delay: .2s;
 }
 
 .menu-contents .link-block-nav .list-level-2 {
@@ -293,8 +302,14 @@ left: 80px;
 .menu-contents .link-block-nav .list-level-2 li a,
 .menu-contents .link-block-nav .list-level-2 li p {
   color: #a4a4a4;
+  overflow: hidden;
 }
-
+.menu-contents .link-block-nav .list-level-2 li p span{
+  position:relative;
+  bottom: -50px;
+  transition: bottom .3s linear;
+  transition-delay: .2s;
+}
 .menu-contents .link-block-nav .list-level-3 {
   margin: 15px 0 15px;
 }
